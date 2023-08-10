@@ -208,6 +208,54 @@ public class LogicalOperators {
 }
 ```
 
+5. Opérateurs de décalage (pour les entiers) :
+
+  - `<<` : Décalage à gauche. Décale les bits à gauche par un certain nombre de positions.
+  - `>>` : Décalage à droite avec extension du signe. Décale les bits à droite avec réplication du bit de signe.
+  - `>>>` : Décalage à droite sans extension du signe. Décale les bits à droite sans réplication du bit de signe.
+
+```java
+public class ShiftOperators {
+    public static void main(String[] args) {
+        int num = 16;
+
+        int leftShifted = num << 2;     // 64 (16 << 2)
+        int rightShifted = num >> 2;    // 4 (16 >> 2)
+        int unsignedRightShifted = num >>> 2; // 4 (16 >>> 2)
+
+        System.out.println("Décalage à gauche : " + leftShifted);
+        System.out.println("Décalage à droite : " + rightShifted);
+        System.out.println("Décalage à droite non signé : " + unsignedRightShifted);
+    }
+}
+```
+
+6. Opérateurs bit à bit :
+
+  - `&` : ET bit à bit. Effectue un ET bit à bit entre deux valeurs.
+  - `|` : OU bit à bit. Effectue un OU bit à bit entre deux valeurs.
+  - `^` : OU exclusif bit à bit. Effectue un OU exclusif bit à bit entre deux valeurs.
+  - `~` : Complément à un. Inverse les bits d'une valeur.
+
+```java
+public class BitwiseOperators {
+    public static void main(String[] args) {
+        int a = 5;  // 0101 en binaire
+        int b = 3;  // 0011 en binaire
+
+        int andResult = a & b;   // 0001 (1 en décimal)
+        int orResult = a | b;    // 0111 (7 en décimal)
+        int xorResult = a ^ b;   // 0110 (6 en décimal)
+        int complementA = ~a;    // 1010 (complément à un de 5)
+
+        System.out.println("ET bit à bit : " + andResult);
+        System.out.println("OU bit à bit : " + orResult);
+        System.out.println("OU exclusif bit à bit : " + xorResult);
+        System.out.println("Complément à un de a : " + complementA);
+    }
+}
+```
+
 Ces opérateurs sont des éléments essentiels de la programmation en Java, car ils vous permettent de manipuler et de comparer les valeurs, de prendre des décisions et de créer des expressions complexes.
 
 ## Structures de contrôle :
