@@ -1,6 +1,3 @@
-# LearnJava
-🤩 Learn Java Easily
-
 ## Installation de Java :
 Assurez-vous que Java est installé sur votre ordinateur. Vous pouvez télécharger le JDK (Java Development Kit) à partir du site officiel d'[Oracle](https://www.java.com/fr/) ou utiliser une distribution OpenJDK.
 
