@@ -5,5 +5,5 @@ To begin, please select the language in which you want to learn the Java program
 
 ## Available languages:
 
-[![fr](https://img.shields.io/badge/lang-fr-blue.svg)](https://github.com/zqodev/LearnJava/blob/master/README-fr.md)
-[![en](https://img.shields.io/badge/lang-en-red.svg)](https://github.com/zqodev/LearnJava/blob/master/README-en.md)
+[![fr](https://img.shields.io/badge/lang-fr-blue.svg)](https://github.com/zqodev/LearnJava/README-fr.md)
+[![en](https://img.shields.io/badge/lang-en-red.svg)](https://github.com/zqodev/LearnJava/README-en.md)
