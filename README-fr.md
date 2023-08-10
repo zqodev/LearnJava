@@ -1,8 +1,8 @@
 ## Installation de Java :
 Assurez-vous que Java est installé sur votre ordinateur. Vous pouvez télécharger le JDK (Java Development Kit) à partir du site officiel d'[Oracle](https://www.java.com/fr/) ou utiliser une distribution OpenJDK.
 
-## Installation d'un IDE :
-Pour pouvoir coder, vous aurez besoin d'un IDE, il en existe une quantité assez élevée, Visual Studio Code, Intelij ou encore Ecplise pour une plus grande facilité et pour que tout le monde puisse facilement comprendre nous allons partir sur le logiciel de Microsoft VSCode.
+## Installation d'un éditeur de code :
+Pour pouvoir coder, vous aurez besoin d'un éditeur de code, il en existe une quantité assez élevée, Visual Studio Code, Intelij ou encore Ecplise pour une plus grande facilité et pour que tout le monde puisse facilement comprendre nous allons partir sur le logiciel de Microsoft VSCode.
 
 Voici les étapes pour installer Visual Studio Code (VSCode) sur votre système :
 
@@ -97,7 +97,7 @@ byte myByte = 10;
         long myLong = 1000000000L;  // Notez le 'L' pour indiquer un littéral long
 
         float myFloat = 3.14f;  // Notez le 'f' pour indiquer un littéral float
-        double myDouble = 2.71828;
+        double myDouble = 2.71828d;
 
         char myChar = 'A';
 
