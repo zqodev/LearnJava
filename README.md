@@ -715,6 +715,57 @@ Dans cet exemple, Personne est une classe avec des **attributs** nom et age, ain
 
 Les **classes et les objets** constituent un fondement essentiel de la programmation orientée objet en Java, permettant d'organiser le code de manière modulaire et de créer des entités abstraites qui **représentent** des concepts du monde réel.
 
+## Constructeurs et Surcharge :
+
+1. **Constructeurs** :
+  - Un constructeur est une méthode spéciale appelée lors de la création d'un objet. Il est utilisé pour initialiser les attributs de l'objet.
+  - Chaque classe peut avoir un ou plusieurs constructeurs. Si vous ne définissez pas de constructeur explicite, Java fournit un constructeur par défaut sans paramètres.
+  - Vous pouvez créer un constructeur personnalisé avec des paramètres pour initialiser les attributs de manière spécifique lors de la création de l'objet.
+2. **Initialisation des Objets** :
+  - L'initialisation des objets se fait généralement dans le constructeur. Les valeurs nécessaires pour l'objet sont passées en tant que paramètres au constructeur.
+  - Vous pouvez utiliser les paramètres du constructeur pour attribuer des valeurs aux attributs de l'objet.
+3. **Surcharge de Constructeurs** :
+  - La surcharge de constructeurs consiste à créer plusieurs constructeurs dans une classe, chacun avec une liste différente de paramètres.
+  - Cela permet de créer des objets de différentes manières en fonction des valeurs fournies en paramètres.
+  - Les constructeurs surchargés doivent avoir des signatures différentes, c'est-à-dire une liste de paramètres distincte.
+4. **Surcharge de Méthodes** :
+  - La surcharge de méthodes consiste à créer plusieurs méthodes dans une classe avec le même nom mais des listes de paramètres différentes.
+  - Les méthodes surchargées sont souvent utilisées pour effectuer des opérations similaires mais avec des types de données différents.
+  - Lors de l'appel d'une méthode surchargée, Java sélectionne automatiquement la version appropriée en fonction des types et du nombre de paramètres.
+
+```java
+class Personne {
+    String nom;
+    int age;
+
+    // Constructeur par défaut
+    Personne() {
+        nom = "Anonyme";
+        age = 0;
+    }
+
+    // Constructeur avec des paramètres
+    Personne(String n, int a) {
+        nom = n;
+        age = a;
+    }
+
+    void afficherDetails() {
+        System.out.println("Nom : " + nom + ", Age : " + age);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Personne personne1 = new Personne();
+        personne1.afficherDetails();
+
+        Personne personne2 = new Personne("Alice", 25);
+        personne2.afficherDetails();
+    }
+}
+```
+
 ## Visibilité des membres :
 
 - **Public** :
