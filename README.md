@@ -754,6 +754,39 @@ public class MaClasse {
 
 *L'utilisation appropriée de ces niveaux de visibilité aide à organiser et à structurer le code de manière efficace, en limitant l'accès non autorisé aux membres internes d'une classe et en permettant une interaction contrôlée avec le monde extérieur.*
 
+## Asbstraction :
+
+1. **Classe Abstraite** :
+  - Une classe abstraite est déclarée en utilisant le mot-clé abstract.
+  - Elle peut contenir des méthodes concrètes (avec une implémentation) ainsi que des méthodes abstraites (sans implémentation).
+  - Les classes abstraites sont souvent utilisées comme des classes de base ou des superclasses pour définir une structure commune et des comportements partagés entre plusieurs sous-classes.
+2. **Méthode Abstraite** :
+  - Une méthode abstraite est déclarée dans une classe abstraite en utilisant le mot-clé abstract et en ne fournissant pas d'implémentation.
+  - Toute classe qui hérite de la classe abstraite doit fournir une implémentation concrète pour toutes les méthodes abstraites héritées.
+
+3. **Héritage et Implémentation** :
+  - Les classes non abstraites qui héritent d'une classe abstraite doivent fournir des implémentations pour toutes les méthodes abstraites héritées.
+  - Si une classe abstraite ne fournit pas d'implémentation pour une méthode abstraite héritée, les sous-classes doivent continuer de fournir des implémentations jusqu'à ce que la méthode soit concrètement implémentée.
+
+```java
+abstract class Forme {
+    int x, y;
+
+    abstract void dessiner(); // Méthode abstraite sans implémentation
+}
+
+class Cercle extends Forme {
+    int rayon;
+
+    @Override
+    void dessiner() {
+        // Implémentation concrète pour la méthode abstraite dessiner()
+    }
+}
+```
+
+*Les classes abstraites et les méthodes abstraites sont des outils importants en programmation orientée objet, car elles permettent de définir des structures et des contrats communs, tout en permettant aux sous-classes de fournir des implémentations spécifiques et personnalisées.*
+
 ## Héritage :
 L'héritage permet de créer une nouvelle classe (sous-classe ou classe dérivée) basée sur une classe existante (superclasse ou classe de base). La sous-classe hérite des attributs et des méthodes de la superclasse, ce qui permet de réutiliser le code et d'ajouter des fonctionnalités spécifiques à la sous-classe.
 ```java
