@@ -94,7 +94,7 @@ En Java, les variables sont utilisées pour **stocker** des données dans la mé
   - `Double` : Enveloppe pour le type primitif **double**.
   - `Character` : Enveloppe pour le type primitif **char**.
   - `Boolean` : Enveloppe pour le type primitif **boolean**.
-  *Ces classes d'enveloppe permettent de travailler avec les types primitifs comme s'ils étaient des objets, ce qui peut être utile dans certaines situations de programmation.*
+  <br/>*Ces classes d'enveloppe permettent de travailler avec les types primitifs comme s'ils étaient des objets, ce qui peut être utile dans certaines situations de programmation.*
 
 Java est un langage fortement **typé**. Vous devez déclarer le type d'une variable avant de l'utiliser.
 Voici comment vous pourriez déclarer et utiliser différents types de variables en Java :
