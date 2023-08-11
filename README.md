@@ -164,6 +164,22 @@ public class AssignmentOperators {
 }
 ```
 
+***Avancé :***
+
+`<<=`, `>>=`, `>>>=` : Opérateurs de décalage d'affectation combinée.
+
+```java
+int a = 10;
+a <<= 2; // Équivalent à a = a << 2;
+```
+
+`&=`, `|=`, `^=` : Opérateurs de bit à bit d'affectation combinée.
+
+```java
+int a = 5;
+a &= 3;  // Équivalent à a = a & 3;
+```
+
 3. Opérateurs de comparaison :
   - `==` : Égal à. Vérifie si deux valeurs sont égales.
   - `!=` : Différent de. Vérifie si deux valeurs sont différentes.
