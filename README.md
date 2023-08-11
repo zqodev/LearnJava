@@ -101,7 +101,7 @@ Voici comment vous pourriez déclarer et utiliser différents types de variables
 ```java
 public class VariablesExample {
     public static void main(String[] args) {
-byte myByte = 10;
+        byte myByte = 10;
         short myShort = 1000;
         int myInt = 100000;
         long myLong = 1000000000L;  // Notez le 'L' pour indiquer un littéral long
