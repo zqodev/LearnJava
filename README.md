@@ -208,7 +208,26 @@ public class LogicalOperators {
 }
 ```
 
-5. Opérateur ternaire :
+5. Opérateurs de pré/post-incrémentation/décrémentation :
+  - `variable++` : Post-incrémentation (retourne la valeur avant l'incrémentation).
+  - `++variable` : Pré-incrémentation (retourne la valeur après l'incrémentation).
+  - `variable--` : Post-décrémentation (retourne la valeur avant la décrémentation).
+  - `--variable` : Pré-décrémentation (retourne la valeur après la décrémentation).
+
+```java
+public class IncrementDecrementExample {
+    public static void main(String[] args) {
+        int x = 5;
+        int y = x++; // y prend la valeur 5, puis x est incrémenté à 6
+        int z = ++x; // x est incrémenté à 7, puis z prend la valeur 7
+        System.out.println("x: " + x);
+        System.out.println("y: " + y);
+        System.out.println("z: " + z);
+    }
+}
+```
+
+6. Opérateur ternaire :
 
 **condition** `?` **valeur_si_vraie** `:` **valeur_si_fausse**
 C'est une façon concise d'exprimer une décision conditionnelle. Si la condition est vraie, l'expression retourne la "valeur_si_vraie", sinon elle retourne la "valeur_si_fausse".
@@ -226,7 +245,7 @@ public class TernaryOperator {
 }
 ```
 
-6. Opérateurs de décalage (pour les entiers) :
+7. Opérateurs de décalage (pour les entiers) :
 
   - `<<` : Décalage à gauche. Décale les bits à gauche par un certain nombre de positions.
   - `>>` : Décalage à droite avec extension du signe. Décale les bits à droite avec réplication du bit de signe.
@@ -248,7 +267,7 @@ public class ShiftOperators {
 }
 ```
 
-7. Opérateurs bit à bit :
+8. Opérateurs bit à bit :
 
   - `&` : ET bit à bit. Effectue un ET bit à bit entre deux valeurs.
   - `|` : OU bit à bit. Effectue un OU bit à bit entre deux valeurs.
@@ -270,6 +289,19 @@ public class BitwiseOperators {
         System.out.println("OU bit à bit : " + orResult);
         System.out.println("OU exclusif bit à bit : " + xorResult);
         System.out.println("Complément à un de a : " + complementA);
+    }
+}
+```
+
+9. Opérateurs d'instanceof :
+   - `instanceof` : Vérifie si un objet est une instance d'une classe particulière.
+
+```java
+public class InstanceOfExample {
+    public static void main(String[] args) {
+        String str = "Hello";
+        boolean isString = str instanceof String;
+        System.out.println("Est-ce une instance de String ? " + isString);
     }
 }
 ```
