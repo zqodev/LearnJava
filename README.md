@@ -1357,6 +1357,61 @@ public class TraitementAnnotations {
 
 *Les annotations personnalisées offrent une manière puissante d'ajouter des métadonnées et des informations spéciales à votre code. Elles sont largement utilisées pour la documentation, la configuration, la validation et d'autres tâches qui nécessitent une personnalisation et une extensibilité flexibles.*
 
+## Réflexion et Métaprogrammation :
+
+La réflexion en Java est une capacité qui permet à un programme d'examiner et de manipuler sa propre structure, ses types de données et ses objets à l'exécution. Cela ouvre la voie à la métaprogrammation, où le code peut créer, modifier et exécuter d'autres parties du code de manière dynamique. 
+La réflexion est principalement basée sur les classes du package `java.lang.reflect`.
+
+- ***Utilisations de la Réflexion*** :
+  1. **Inspecter les Classes** :
+    - Vous pouvez obtenir des informations sur les champs, les méthodes, les constructeurs et les annotations d'une classe.
+    - Vous pouvez examiner la hiérarchie d'héritage, les interfaces implémentées et les superclasses.
+  2. **Créer des Objets Dynamiquement** :
+    - Vous pouvez instancier des classes à partir de leur nom (en tant que chaîne) à l'exécution.
+  3. **Appeler des Méthodes Dynamiquement** :
+    - Vous pouvez invoquer des méthodes d'objets en utilisant leur nom de méthode sous forme de chaîne.
+  4. **Manipuler des Attributs** :
+    - Vous pouvez obtenir et définir la valeur des champs d'un objet.
+  5. **Manipuler les Tableaux** :
+    - Vous pouvez créer, lire et modifier des tableaux de manière dynamique.
+
+- ***Exemple d'utilisation de la Réflexion*** :
+  Voici comment vous pourriez utiliser la réflexion pour créer une instance d'une classe, invoquer une méthode et accéder à ses attributs :
+
+```java
+  import java.lang.reflect.*;
+
+class Exemple {
+    private String message;
+
+    public Exemple() {
+        message = "Hello, Réflexion!";
+    }
+
+    public void afficherMessage() {
+        System.out.println(message);
+    }
+}
+
+public class UtilisationReflexion {
+    public static void main(String[] args) throws Exception {
+        Class<?> classe = Class.forName("Exemple");
+        Object instance = classe.getDeclaredConstructor().newInstance();
+
+        Method methode = classe.getDeclaredMethod("afficherMessage");
+        methode.invoke(instance);
+
+        Field champMessage = classe.getDeclaredField("message");
+        champMessage.setAccessible(true);
+        champMessage.set(instance, "Message modifié via Réflexion");
+
+        Method nouvelleMethode = classe.getDeclaredMethod("afficherMessage");
+        nouvelleMethode.invoke(instance);
+    }
+}
+```
+
+
 ## Fin
 Félicitations pour avoir suivi ce tutoriel Java ! Vous avez maintenant acquis des connaissances de base en programmation Java, en commençant par les concepts fondamentaux tels que les variables, les opérateurs et les boucles, en passant par les structures de contrôle et les classes/objets, jusqu'à des sujets plus avancés comme la gestion des exceptions, les collections et même une introduction à la programmation fonctionnelle.
 
