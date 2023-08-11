@@ -2,7 +2,7 @@
 Assurez-vous que Java est installé sur votre ordinateur. Vous pouvez télécharger le JDK (Java Development Kit) à partir du site officiel d'[Oracle](https://www.java.com/fr/) ou utiliser une distribution OpenJDK.
 
 ## Installation d'un éditeur de code :
-Pour pouvoir coder, vous aurez besoin d'un éditeur de code, il en existe une quantité assez élevée, Visual Studio Code, Intelij ou encore Ecplise pour une plus grande facilité et pour que tout le monde puisse facilement comprendre nous allons partir sur le logiciel de Microsoft VSCode.
+Pour pouvoir coder, vous aurez besoin d'un éditeur de code/IDE, il en existe une quantité assez élevée, Visual Studio Code, Intelij ou encore Ecplise pour une plus grande facilité et pour que tout le monde puisse facilement comprendre nous allons partir sur le logiciel de Microsoft VSCode.
 
 Voici les étapes pour installer Visual Studio Code (VSCode) sur votre système :
 
