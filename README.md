@@ -243,7 +243,7 @@ public class IncrementDecrementExample {
 }
 ```
 
-6. Opérateur ternaire :
+6. Opérateurs ternaires :
 
 **condition** `?` **valeur_si_vraie** `:` **valeur_si_fausse**
 C'est une façon concise d'exprimer une décision conditionnelle. Si la condition est vraie, l'expression retourne la "valeur_si_vraie", sinon elle retourne la "valeur_si_fausse".
@@ -261,7 +261,23 @@ public class TernaryOperator {
 }
 ```
 
-7. Opérateurs de décalage (pour les entiers) :
+7. Opérateurs ternaires imbriqués :
+
+```java
+public class NestedTernary {
+    public static void main(String[] args) {
+        int num = 10;
+
+        String result = (num > 0)
+            ? (num < 5 ? "Petit positif" : "Grand positif")
+            : (num < 0 ? "Négatif" : "Zéro");
+
+        System.out.println("Résultat : " + result);
+    }
+}
+```
+
+8. Opérateurs de décalage (pour les entiers) :
 
   - `<<` : Décalage à gauche. Décale les bits à gauche par un certain nombre de positions.
   - `>>` : Décalage à droite avec extension du signe. Décale les bits à droite avec réplication du bit de signe.
@@ -283,7 +299,7 @@ public class ShiftOperators {
 }
 ```
 
-8. Opérateurs bit à bit :
+9. Opérateurs bit à bit :
 
   - `&` : ET bit à bit. Effectue un ET bit à bit entre deux valeurs.
   - `|` : OU bit à bit. Effectue un OU bit à bit entre deux valeurs.
@@ -309,7 +325,7 @@ public class BitwiseOperators {
 }
 ```
 
-9. Opérateurs d'instanceof :
+10. Opérateurs d'instanceof :
    - `instanceof` : Vérifie si un objet est une instance d'une classe particulière.
 
 ```java
