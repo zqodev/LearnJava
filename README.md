@@ -1306,6 +1306,57 @@ La programmation fonctionnelle favorise l'utilisation de fonctions d'ordre supé
 
 Bien que Java ne soit pas un langage fonctionnel pur comme Haskell ou Scala, il propose des fonctionnalités qui vous permettent d'appliquer des concepts de programmation fonctionnelle pour écrire un code plus concis, lisible et maintenable.
 
+## Annotations Personnalisées :
+
+Les annotations personnalisées permettent aux développeurs de définir leurs propres métadonnées et informations spéciales qui peuvent être ajoutées aux éléments de code tels que les classes, les méthodes et les champs. Ces annotations peuvent être utilisées pour fournir des informations supplémentaires au compilateur, aux outils de développement ou à d'autres parties du système.
+
+1. Création d'une Annotation Personnalisée :
+  - Pour créer une annotation personnalisée en Java, vous devez définir une nouvelle interface annotée avec @interface. Cette interface peut avoir des éléments (méthodes) qui définissent les paramètres et les valeurs par défaut de l'annotation.
+  - Voici un exemple d'annotation personnalisée pour documenter les auteurs d'une classe :
+```java
+import java.lang.annotation.*;
+
+@Retention(RetentionPolicy.RUNTIME)
+@Target(ElementType.TYPE)
+public @interface Auteur {
+    String nom();
+    String date();
+}
+```
+
+`@Retention(RetentionPolicy.RUNTIME)` indique que l'annotation sera conservée et accessible à l'exécution.
+`@Target(ElementType.TYPE)` spécifie que l'annotation peut être appliquée aux classes.
+
+2. Utilisation de l'Annotation Personnalisée :
+
+Une fois que vous avez défini votre annotation personnalisée, vous pouvez l'utiliser pour annoter des éléments de code.
+
+```java
+@Auteur(nom = "John Doe", date = "2023-08-10")
+public class MaClasse {
+    // Contenu de la classe
+}
+```
+
+3. Traitement des Annotations :
+
+Pour traiter les annotations personnalisées, vous pouvez utiliser la réflexion en Java. Voici comment vous pourriez récupérer les informations de l'annotation Auteur :
+
+```java
+public class TraitementAnnotations {
+    public static void main(String[] args) {
+        Class<?> classe = MaClasse.class;
+        if (classe.isAnnotationPresent(Auteur.class)) {
+            Auteur annotation = classe.getAnnotation(Auteur.class);
+            System.out.println("Auteur : " + annotation.nom());
+            System.out.println("Date : " + annotation.date());
+        }
+    }
+}
+```
+
+*Les annotations personnalisées offrent une manière puissante d'ajouter des métadonnées et des informations spéciales à votre code. Elles sont largement utilisées pour la documentation, la configuration, la validation et d'autres tâches qui nécessitent une personnalisation et une extensibilité flexibles.*
+
 ## Fin
 Félicitations pour avoir suivi ce tutoriel Java ! Vous avez maintenant acquis des connaissances de base en programmation Java, en commençant par les concepts fondamentaux tels que les variables, les opérateurs et les boucles, en passant par les structures de contrôle et les classes/objets, jusqu'à des sujets plus avancés comme la gestion des exceptions, les collections et même une introduction à la programmation fonctionnelle.
 
