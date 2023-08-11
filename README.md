@@ -85,6 +85,16 @@ En Java, les variables sont utilisées pour **stocker** des données dans la mé
   - `boolean` : Peut contenir soit **true** (vrai) ou **false** (faux). Utilisé pour les opérations logiques.
 5. Type chaîne de caractères :
   - `String` : Utilisé pour stocker une **séquence de caractères**. Les chaînes sont des **objets** en Java, et non des types primitifs.
+6. Type de données Wrapper :
+  - `Byte` : Enveloppe pour le type primitif **byte**.
+  - `Short` : Enveloppe pour le type primitif **short**.
+  - `Integer` : Enveloppe pour le type primitif **int**.
+  - `Long` : Enveloppe pour le type primitif **long**.
+  - `Float` : Enveloppe pour le type primitif **float**.
+  - `Double` : Enveloppe pour le type primitif **double**.
+  - `Character` : Enveloppe pour le type primitif **char**.
+  - `Boolean` : Enveloppe pour le type primitif **boolean**.
+  *Ces classes d'enveloppe permettent de travailler avec les types primitifs comme s'ils étaient des objets, ce qui peut être utile dans certaines situations de programmation.*
 
 Java est un langage fortement **typé**. Vous devez déclarer le type d'une variable avant de l'utiliser.
 Voici comment vous pourriez déclarer et utiliser différents types de variables en Java :
@@ -704,6 +714,45 @@ public class Personne {
 Dans cet exemple, Personne est une classe avec des **attributs** nom et age, ainsi que des **méthodes** afficherInfos(). Deux **objets**, personne1 et personne2, sont créés à partir de cette classe, chacun avec ses propres valeurs d'attributs. Les objets sont ensuite utilisés pour **appeler** des méthodes et **accéder** aux attributs.
 
 Les **classes et les objets** constituent un fondement essentiel de la programmation orientée objet en Java, permettant d'organiser le code de manière modulaire et de créer des entités abstraites qui **représentent** des concepts du monde réel.
+
+## Visibilité des membres :
+
+- **Public** :
+Les membres déclarés comme public sont accessibles depuis n'importe où dans le code, y compris à l'extérieur de la classe où ils sont définis.
+Ils peuvent être utilisés par d'autres classes, qu'elles soient du même paquetage (package) ou d'un paquetage différent.
+Les membres publics sont souvent utilisés pour les interfaces publiques d'une classe, permettant aux autres classes d'interagir avec cette classe de manière contrôlée.
+
+- **Private** :
+Les membres déclarés comme private sont accessibles uniquement à l'intérieur de la classe où ils sont définis.
+Ils ne sont pas visibles ni accessibles depuis d'autres classes, même si elles sont dans le même paquetage.
+L'encapsulation est encouragée en Java, et la déclaration de membres comme private permet de restreindre l'accès direct aux données internes d'une classe. Cela favorise la cohésion et le contrôle.
+
+- **Protected** :
+Les membres déclarés comme protected sont accessibles depuis les classes du même paquetage, ainsi que par les sous-classes (classes dérivées) même si elles se trouvent dans des paquetages différents.
+Les membres protected permettent d'étendre et de personnaliser le comportement des classes dans une hiérarchie d'héritage, tout en limitant leur visibilité à un certain niveau.
+
+*Exemple :*
+```java
+public class MaClasse {
+    public int attributPublic;
+    private int attributPrive;
+    protected int attributProtege;
+
+    public void methodePublique() {
+        // Peut être appelée de n'importe où
+    }
+
+    private void methodePrivee() {
+        // Uniquement accessible depuis cette classe
+    }
+
+    protected void methodeProtegee() {
+        // Accessible depuis les sous-classes et classes du même paquetage
+    }
+}
+```
+
+*L'utilisation appropriée de ces niveaux de visibilité aide à organiser et à structurer le code de manière efficace, en limitant l'accès non autorisé aux membres internes d'une classe et en permettant une interaction contrôlée avec le monde extérieur.*
 
 ## Héritage :
 L'héritage permet de créer une nouvelle classe (sous-classe ou classe dérivée) basée sur une classe existante (superclasse ou classe de base). La sous-classe hérite des attributs et des méthodes de la superclasse, ce qui permet de réutiliser le code et d'ajouter des fonctionnalités spécifiques à la sous-classe.
