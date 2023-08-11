@@ -1409,6 +1409,60 @@ public class UtilisationReflexion {
 }
 ```
 
+## ClassLoader Personnalisé :
+
+En Java, un classloader est responsable du chargement des classes en mémoire à partir des fichiers de classe ou d'autres sources. Par défaut, Java utilise trois classloaders principaux : le Bootstrap ClassLoader, le Extension ClassLoader et le Application ClassLoader. 
+Cependant, il est possible de créer des classloaders personnalisés pour charger des classes à partir de sources non conventionnelles, comme des bases de données ou des systèmes de fichiers distants.
+
+1. **Création d'un ClassLoader Personnalisé** :
+Pour créer un classloader personnalisé, vous devez étendre la classe `ClassLoader` et implémenter la méthode `findClass(String nomDeClasse)` pour spécifier comment charger la classe à partir de la source souhaitée.
+Voici un exemple simplifié de classloader personnalisé pour charger des classes à partir d'un répertoire spécifique :
+
+
+```java
+import java.io.*;
+
+public class MonClassLoader extends ClassLoader {
+    private String cheminRepertoire;
+
+    public MonClassLoader(String cheminRepertoire) {
+        this.cheminRepertoire = cheminRepertoire;
+    }
+
+    @Override
+    protected Class<?> findClass(String nomDeClasse) throws ClassNotFoundException {
+        try {
+            byte[] bytes = chargerClasseDepuisFichier(nomDeClasse);
+            return defineClass(nomDeClasse, bytes, 0, bytes.length);
+        } catch (IOException e) {
+            throw new ClassNotFoundException("La classe n'a pas pu être chargée : " + nomDeClasse);
+        }
+    }
+
+    private byte[] chargerClasseDepuisFichier(String nomDeClasse) throws IOException {
+        String cheminFichier = cheminRepertoire + File.separator + nomDeClasse.replace('.', File.separatorChar) + ".class";
+        try (FileInputStream fis = new FileInputStream(cheminFichier)) {
+            ByteArrayOutputStream bos = new ByteArrayOutputStream();
+            int b;
+            while ((b = fis.read()) != -1) {
+                bos.write(b);
+            }
+            return bos.toByteArray();
+        }
+    }
+
+    public static void main(String[] args) throws Exception {
+        MonClassLoader classLoader = new MonClassLoader("/chemin/vers/repertoire");
+        Class<?> classe = classLoader.loadClass("MaClasse");
+        // Utilisation de la classe chargée...
+    }
+}
+```
+
+2. **Utilisation du ClassLoader Personnalisé** :
+
+Dans l'exemple ci-dessus, le `MonClassLoader` charge les classes à partir d'un répertoire spécifié. Vous pouvez personnaliser ce code pour charger des classes à partir de sources telles que des bases de données, des services web, des systèmes de fichiers distants, etc.
+La création d'un classloader personnalisé peut être complexe et nécessite une compréhension approfondie du fonctionnement interne des classloaders Java. Cependant, cela offre une flexibilité accrue pour gérer des scénarios de chargement de classes non conventionnels dans vos applications.
 
 ## Fin
 Félicitations pour avoir suivi ce tutoriel Java ! Vous avez maintenant acquis des connaissances de base en programmation Java, en commençant par les concepts fondamentaux tels que les variables, les opérateurs et les boucles, en passant par les structures de contrôle et les classes/objets, jusqu'à des sujets plus avancés comme la gestion des exceptions, les collections et même une introduction à la programmation fonctionnelle.
